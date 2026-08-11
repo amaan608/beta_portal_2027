@@ -1,13 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&display=swap');
+
+@font-face {
+  font-family: 'MD Nichrome Test';
+  src: url('./assets/fonts/MDNichromeTest-Dark.otf') format('opentype');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MD Nichrome Test';
+  src: url('./assets/fonts/MDNichromeTest-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'MD Nichrome Test';
+  src: url('./assets/fonts/MDNichromeTest-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Familjen Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1, h2, h3, h4 {
+  font-family: 'MD Nichrome Test', sans-serif;
+}
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
