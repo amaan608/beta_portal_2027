@@ -1,18 +1,25 @@
-import FeaturedBanner from "../componenets/home/FeaturedBanner";
-import Footer from "../componenets/home/footer";
-import MarqueeStrip from '../componenets/home/MarqueeStrip';
-import EventHighlight from "../componenets/home/eventHighlight";
+import Navbar from '../components/Navbar';
+import HeroSection from '../components/home/HeroSection';
+import AboutSection from '../components/home/AboutSection';
+import EventHighlight from "../components/home/eventHighlight";
+import FeaturedBanner from "../components/home/FeaturedBanner";
+import MarqueeStrip from '../components/home/MarqueeStrip';
+import Footer from "../components/home/footer";
 
 function Home() {
     return (
-        <>
-          <EventHighlight/>
-          <FeaturedBanner/>
+        <div className="w-full min-h-screen bg-black overflow-x-hidden">
+          <Navbar />
+          <main>
+              <HeroSection />
+              <AboutSection />
+              <EventHighlight />
+              <FeaturedBanner />
+              <MarqueeStrip />
+          </main>
           <Footer />
-          <MarqueeStrip/>
-
-        </>
-    )
+        </div>
+    );
 }
 
 export default Home;
