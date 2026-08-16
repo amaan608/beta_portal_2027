@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import alcherLogo from '../assets/images/alcher-logo.svg'; 
@@ -10,27 +11,34 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: 'Competitions', href: '#' },
-    { name: 'Events', href: '#' },
-    { name: 'Kartavya', href: '#' },
-    { name: 'MUN', href: '#' },
-    { name: 'CA Program', href: '#' },
-    { name: 'Team', href: '#' },
+    { name: 'Competitions', path: '/competitions' },
+    { name: 'Events', path: '/events' },
+    { name: 'Kartavya', path: '/kartavya' },
+    { name: 'MUN', path: '/mun' },
+    { name: 'CA Program', path: '/ca-program' },
+    { name: 'Team', path: '/team' },
   ];
 
   // GSAP Scroll Hide/Show Logic
   useEffect(() => {
     let ctx = gsap.context(() => {
-      ScrollTrigger.create({
-        trigger: '#about-section', 
-        start: 'top 15%', 
-        onEnter: () => {
-          gsap.to(navRef.current, { y: -100, opacity: 0, duration: 0.3, ease: 'power2.inOut' });
-        },
-        onLeaveBack: () => {
-          gsap.to(navRef.current, { y: 0, opacity: 1, duration: 0.3, ease: 'power2.out' });
-        }
-      });
+      // The Navbar now dynamically looks for the main content section on the Home, Team, OR Kartavya page
+      const targetSection = document.querySelector('#about-section') || 
+                            document.querySelector('#team-section') || 
+                            document.querySelector('#kartavya-section');
+
+      if (targetSection) {
+        ScrollTrigger.create({
+          trigger: targetSection, 
+          start: 'top 15%', 
+          onEnter: () => {
+            gsap.to(navRef.current, { y: -100, opacity: 0, duration: 0.3, ease: 'power2.inOut' });
+          },
+          onLeaveBack: () => {
+            gsap.to(navRef.current, { y: 0, opacity: 1, duration: 0.3, ease: 'power2.out' });
+          }
+        });
+      }
     });
 
     return () => ctx.revert(); 
@@ -51,29 +59,26 @@ function Navbar() {
         ref={navRef} 
         className="fixed top-0 left-0 w-full z-50 flex items-center justify-between md:justify-start px-8 md:px-[80px] py-8 bg-transparent text-white md:gap-[120px]"
       >
-        {/* Logo */}
-        <div className="flex items-center cursor-pointer shrink-0 z-50">
+        <Link to="/" className="flex items-center cursor-pointer shrink-0 z-50">
           <img 
             src={alcherLogo} 
             alt="Alcheringa Logo" 
             className="h-10 md:h-12 w-auto object-contain" 
           />
-        </div>
+        </Link>
 
-        {/* Desktop Navigation Links */}
         <div className="hidden md:flex items-center gap-[50px]">
           {navLinks.map((link, idx) => (
-            <a 
+            <Link 
               key={idx} 
-              href={link.href} 
+              to={link.path} 
               className="font-body text-[17px] font-[500] hover:text-[#FC6840] transition-colors whitespace-nowrap"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </div>
 
-        {/* Mobile Hamburger Button */}
         <button 
           className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none z-50 relative"
           onClick={() => setIsOpen(!isOpen)}
@@ -84,7 +89,6 @@ function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile Menu Full-Screen Overlay */}
       <div 
         className={`fixed inset-0 bg-black/95 z-40 flex flex-col items-center justify-center transition-opacity duration-300 md:hidden ${
           isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
@@ -92,14 +96,14 @@ function Navbar() {
       >
         <div className="flex flex-col items-center gap-8">
           {navLinks.map((link, idx) => (
-            <a 
+            <Link 
               key={idx} 
-              href={link.href} 
-              onClick={() => setIsOpen(false)} // Close menu when a link is clicked
+              to={link.path} 
+              onClick={() => setIsOpen(false)} 
               className="font-heading text-3xl text-white hover:text-[#FC6840] transition-colors uppercase tracking-widest"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </div>
       </div>
