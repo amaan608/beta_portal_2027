@@ -1,15 +1,11 @@
 import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import heroConcert from '../../assets/images/heroevents.jpeg';
+import teamHeroImage from '../../assets/images/team-hero.JPG';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const START_W = 400;
-const START_H = 250;
-const START_TOP = 420;
-
-function HeroEvents() {
+function TeamHeroSection() {
   const containerRef = useRef(null);
   const imageRef = useRef(null);
   const mediaRef = useRef(null);
@@ -19,9 +15,8 @@ function HeroEvents() {
 
   useEffect(() => {
     const container = containerRef.current;
-    const image = imageRef.current;
     const media = mediaRef.current;
-    if (!container || !image || !media) return;
+    if (!container || !media) return;
 
     const mediaFloat = 40;
 
@@ -50,14 +45,6 @@ function HeroEvents() {
     };
 
     let ctx = gsap.context(() => {
-      // Keep events layout: centered lower image (no left/xPercent swap on expand)
-      gsap.set(image, {
-        top: START_TOP,
-        left: '50%',
-        xPercent: -50,
-        width: START_W,
-        height: START_H,
-      });
       gsap.set(media, { scale: 1.15 });
 
       const tl = gsap.timeline({
@@ -67,21 +54,17 @@ function HeroEvents() {
           end: '+=200%',
           scrub: 1,
           pin: true,
-          invalidateOnRefresh: true,
         },
       });
 
-      // Same expand feel as Team / Kartavya, from this lower position
-      tl.to(image, {
-        top: 0,
+      tl.to(imageRef.current, {
         width: '100vw',
         height: '100vh',
-        borderRadius: 0,
+        borderRadius: '0px',
         duration: 3,
         ease: 'power2.inOut',
       });
 
-      // Text fades out as the image takes over
       tl.to(
         [textLeftRef.current, textRightRef.current, subtitleRef.current],
         {
@@ -107,50 +90,52 @@ function HeroEvents() {
     <section
       id="hero-section"
       ref={containerRef}
-      className="relative w-full h-screen bg-black overflow-hidden"
+      className="relative w-full h-screen bg-black overflow-hidden flex flex-col items-center justify-center"
     >
       <div
         ref={imageRef}
-        className="absolute z-0 overflow-hidden rounded-md shadow-2xl bg-black"
-        style={{ width: START_W, height: START_H }}
+        className="absolute z-0 w-[450px] h-[280px] overflow-hidden rounded-md shadow-2xl bg-black flex flex-col justify-end"
       >
         <img
           ref={mediaRef}
-          src={heroConcert}
-          alt="Alcheringa Stage"
-          className="absolute left-0 top-0 w-full h-full object-cover block will-change-transform"
+          src={teamHeroImage}
+          alt="Alcheringa Team"
+          className="absolute inset-0 w-full h-full object-cover block will-change-transform"
         />
+        <div className="absolute inset-0 bg-black/30 mix-blend-multiply pointer-events-none" />
       </div>
 
-      <div className="relative z-10 w-full h-full max-w-7xl mx-auto px-10 pointer-events-none">
-        <div
-          ref={textLeftRef}
-          className="absolute top-[90px] left-1/2 -translate-x-1/2 text-center"
-        >
-          <h1 className="font-heading text-[#FC6840] font-[500] text-[96px] leading-tight uppercase m-0 whitespace-nowrap">
-            ONE FESTIVAL
+      <div className="relative z-10 w-full h-full max-w-7xl mx-auto px-10 flex flex-col justify-center pointer-events-none">
+        <div ref={textLeftRef} className="absolute left-10 top-1/3 transition-opacity">
+          <h1 className="font-heading text-[#FC6840] text-5xl md:text-7xl leading-tight uppercase m-0">
+            The People
           </h1>
         </div>
 
         <div
           ref={textRightRef}
-          className="absolute top-[200px] left-1/2 -translate-x-1/2 text-center"
+          className="absolute right-10 bottom-1/3 text-right transition-opacity"
         >
-          <h2 className="font-heading text-[#F8C93D] text-[80px] font-[500] leading-tight uppercase m-0 whitespace-nowrap">
-            ENDLESS MEMORIES
+          <h2 className="font-heading text-[#F8C93D] text-3xl md:text-5xl leading-tight uppercase m-0">
+            Behind The
+            <br />
+            Experience
           </h2>
         </div>
+      </div>
 
-        <p
-          ref={subtitleRef}
-          className="absolute top-[320px] left-1/2 -translate-x-1/2 max-w-[420px] text-center text-white font-body text-[20px] font-[400] m-0"
-        >
-          From electrifying performances to immersive experiences, discover
-          everything that makes Alcheringa unforgettable.
+      <div
+        ref={subtitleRef}
+        className="absolute top-[calc(50%+180px)] w-full text-center z-10 pointer-events-none px-6 transition-opacity"
+      >
+        <p className="font-body text-[#A3A3A3] text-sm md:text-base font-medium">
+          Meet the people whose passion, creativity, and
+          <br />
+          teamwork bring Alcheringa to life.
         </p>
       </div>
     </section>
   );
 }
 
-export default HeroEvents;
+export default TeamHeroSection;

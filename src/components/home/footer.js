@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import alcherLogo from '../../assets/images/alcher-logo.png'
 import facebookIcon from '../../assets/images/facebook.svg';
 import twitterIcon from '../../assets/images/twitter-x.svg';
@@ -9,10 +10,10 @@ import phoneIcon from '../../assets/images/telephone.svg';
 const quickLinks = [
   { label: 'Competitions', href: '/competitions' },
   { label: 'Events', href: '/events' },
-  { label: 'Kartavya', href: '#' },
-  { label: 'MUN', href: '#' },
-  { label: 'Campus Ambassador', href: '#' },
-  { label: 'Team', href: '#' },
+  { label: 'Kartavya', href: '/kartavya' },
+  { label: 'MUN', href: '/mun' },
+  { label: 'CA Program', href: '/ca-program' },
+  { label: 'Team', href: '/team' },
 ];
 
 const contacts = [
@@ -63,9 +64,9 @@ function Footer() {
 
           <div className="flex items-center gap-4">
             {socials.map(({ icon, href, alt }, i) => (
-              <a key={i} href={href} target="_blank" rel="noopener noreferrer">
+              <Link key={i} to={href} target="_blank" rel="noopener noreferrer">
                 <img src={icon} alt={alt} className="w-5 h-5" />
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -80,9 +81,9 @@ function Footer() {
           <h4 className="text-[16px] font-body font-[500] text-gray-400">Quick Links</h4>
           <div className="flex flex-col gap-3 text-[16px] font-[500] text-white-300">
             {quickLinks.map(link => (
-              <a key={link.label} href={link.href} className="text-sm">
+              <Link key={link.label} to={link.href} className="text-sm">
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

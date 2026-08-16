@@ -9,15 +9,15 @@ function HeroComp() {
   const containerRef = useRef(null);
   const imageRef = useRef(null);
   const mediaRef = useRef(null);
+  const textLeftRef = useRef(null);
+  const textRightRef = useRef(null);
+  const subtitleRef = useRef(null);
 
   useEffect(() => {
     const container = containerRef.current;
-    const image = imageRef.current;
     const media = mediaRef.current;
-    if (!container || !image || !media) return;
+    if (!container || !media) return;
 
-    // Floating parallax strength (px)
-    const frameFloat = 28;
     const mediaFloat = 40;
 
     const onMove = (e) => {
@@ -25,15 +25,6 @@ function HeroComp() {
       const x = (e.clientX - rect.left) / rect.width - 0.5;
       const y = (e.clientY - rect.top) / rect.height - 0.5;
 
-      gsap.to(image, {
-        x: x * frameFloat * 2,
-        y: y * frameFloat * 2,
-        duration: 1.1,
-        ease: 'power3.out',
-        overwrite: 'auto',
-      });
-
-      // Inner photo drifts a bit more for depth
       gsap.to(media, {
         x: x * mediaFloat * 2,
         y: y * mediaFloat * 2,
@@ -44,13 +35,6 @@ function HeroComp() {
     };
 
     const onLeave = () => {
-      gsap.to(image, {
-        x: 0,
-        y: 0,
-        duration: 1.2,
-        ease: 'power3.out',
-        overwrite: 'auto',
-      });
       gsap.to(media, {
         x: 0,
         y: 0,
@@ -73,13 +57,25 @@ function HeroComp() {
         },
       });
 
-      tl.to(image, {
+      // Same expand as Team / Kartavya — grows from current centered position
+      tl.to(imageRef.current, {
         width: '100vw',
         height: '100vh',
         borderRadius: '0px',
         duration: 3,
         ease: 'power2.inOut',
       });
+
+      // Text fades out as the image takes over
+      tl.to(
+        [textLeftRef.current, textRightRef.current, subtitleRef.current],
+        {
+          opacity: 0,
+          y: -20,
+          duration: 1,
+        },
+        '<'
+      );
     });
 
     container.addEventListener('mousemove', onMove);
@@ -98,31 +94,9 @@ function HeroComp() {
       ref={containerRef}
       className="relative w-full h-screen bg-black overflow-hidden flex items-center justify-center"
     >
-      <div className="relative z-10 w-full h-full max-w-7xl mx-auto px-10 flex flex-col justify-center pointer-events-none">
-        <div className="absolute left-[127px] top-[240px]">
-          <h1 className="font-heading text-[#FC6840] font-[500] text-[96px] leading-tight uppercase m-0">
-            FROM
-            <br />
-            PASSION
-          </h1>
-        </div>
-
-        <div className="absolute left-[1062px] top-[357px] text-right">
-          <h2 className="font-heading text-[#F8C93D] text-[80px] font-[500] leading-tight uppercase m-0">
-            TO
-            <br />
-            GLORY
-          </h2>
-        </div>
-        <p className="absolute top-[500px] left-[430px] max-w-[420px] text-center text-white font-body text-[20px] font-[400] m-0">
-          Step into the arena, challenge your limits, and compete for glory at
-          Alcheringa.
-        </p>
-      </div>
-
       <div
         ref={imageRef}
-        className="absolute z-20 w-[400px] h-[250px] overflow-hidden rounded-md shadow-2xl bg-black will-change-transform"
+        className="absolute z-0 w-[400px] h-[250px] overflow-hidden rounded-md shadow-2xl bg-black"
       >
         <img
           ref={mediaRef}
@@ -130,6 +104,32 @@ function HeroComp() {
           alt="Alcheringa Stage"
           className="absolute left-0 top-0 w-full h-full object-cover block will-change-transform"
         />
+      </div>
+
+      <div className="relative z-10 w-full h-full max-w-7xl mx-auto px-10 flex flex-col justify-center pointer-events-none">
+        <div ref={textLeftRef} className="absolute left-[127px] top-[240px]">
+          <h1 className="font-heading text-[#FC6840] font-[500] text-[96px] leading-tight uppercase m-0">
+            FROM
+            <br />
+            PASSION
+          </h1>
+        </div>
+
+        <div ref={textRightRef} className="absolute left-[1062px] top-[357px] text-right">
+          <h2 className="font-heading text-[#F8C93D] text-[80px] font-[500] leading-tight uppercase m-0">
+            TO
+            <br />
+            GLORY
+          </h2>
+        </div>
+
+        <p
+          ref={subtitleRef}
+          className="absolute top-[500px] left-[430px] max-w-[420px] text-center text-white font-body text-[20px] font-[400] m-0"
+        >
+          Step into the arena, challenge your limits, and compete for glory at
+          Alcheringa.
+        </p>
       </div>
     </section>
   );

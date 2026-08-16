@@ -1,16 +1,15 @@
 import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import heroConcert from '../../assets/images/frame-145.jpg';
+import kartavyaHeroImage from '../../assets/images/kartavya-hero.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 
-function HeroSection() {
+function KartavyaHeroSection() {
   const containerRef = useRef(null);
   const imageRef = useRef(null);
   const mediaRef = useRef(null);
-  const textLeftRef = useRef(null);
-  const textRightRef = useRef(null);
+  const textRef = useRef(null);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -44,6 +43,7 @@ function HeroSection() {
     };
 
     let ctx = gsap.context(() => {
+      gsap.set(imageRef.current, { yPercent: -50, top: '50%' });
       gsap.set(media, { scale: 1.15 });
 
       const tl = gsap.timeline({
@@ -57,18 +57,21 @@ function HeroSection() {
       });
 
       tl.to(imageRef.current, {
-        width: '100vw',
-        height: '100vh',
+        width: '100%',
+        height: '100%',
+        right: '0px',
+        top: '0%',
+        yPercent: 0,
         borderRadius: '0px',
         duration: 3,
         ease: 'power2.inOut',
       });
 
       tl.to(
-        [textLeftRef.current, textRightRef.current],
+        textRef.current,
         {
           opacity: 0,
-          y: -20,
+          x: -40,
           duration: 1,
         },
         '<'
@@ -89,40 +92,40 @@ function HeroSection() {
     <section
       id="hero-section"
       ref={containerRef}
-      className="relative w-full h-screen bg-black overflow-hidden flex items-center justify-center"
+      className="relative w-full h-screen bg-black overflow-hidden"
     >
       <div
+        ref={textRef}
+        className="absolute z-10 w-full h-full max-w-7xl mx-auto px-8 md:px-[80px] flex flex-col justify-center pointer-events-none left-0 right-0"
+      >
+        <div className="w-full md:w-1/2 flex flex-col">
+          <h1 className="font-heading text-[#FC6840] text-5xl md:text-7xl lg:text-[80px] leading-none uppercase m-0">
+            Where Purpose
+          </h1>
+          <h1 className="font-heading text-[#F8C93D] text-5xl md:text-7xl lg:text-[80px] leading-none uppercase m-0 mb-8">
+            Meets Action
+          </h1>
+          <p className="font-body text-[#A3A3A3] text-lg md:text-xl font-medium max-w-md">
+            Explore how Alcheringa turns its spirit of celebration into action
+            for the community.
+          </p>
+        </div>
+      </div>
+
+      <div
         ref={imageRef}
-        className="absolute z-0 w-[400px] h-[250px] overflow-hidden rounded-md shadow-2xl bg-black"
+        className="absolute z-0 right-8 md:right-[80px] w-[90%] md:w-[45%] aspect-video bg-[#111111] overflow-hidden rounded-md shadow-2xl"
       >
         <img
           ref={mediaRef}
-          src={heroConcert}
-          alt="Alcheringa Stage"
+          src={kartavyaHeroImage}
+          alt="Kartavya Initiative"
           className="absolute inset-0 w-full h-full object-cover block will-change-transform"
         />
-        <div className="absolute inset-0 bg-black/40 mix-blend-multiply pointer-events-none" />
-      </div>
-
-      <div className="relative z-10 w-full h-full max-w-7xl mx-auto px-10 flex flex-col justify-center pointer-events-none">
-        <div ref={textLeftRef} className="absolute left-10 top-1/3">
-          <h1 className="font-heading text-[#FC6840] text-[64px] font-[500] leading-tight uppercase m-0">
-            The Countdown
-            <br />
-            Begins
-          </h1>
-        </div>
-
-        <div ref={textRightRef} className="absolute right-10 bottom-1/3 text-right">
-          <h2 className="font-heading text-[#F8C93D] text-[40px] font-[500] leading-tight uppercase m-0">
-            This January
-            <br />
-            Guwahati Gets Loud
-          </h2>
-        </div>
+        <div className="absolute inset-0 bg-black/30 pointer-events-none mix-blend-multiply" />
       </div>
     </section>
   );
 }
 
-export default HeroSection;
+export default KartavyaHeroSection;
