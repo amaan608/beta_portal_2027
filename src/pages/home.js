@@ -15,9 +15,9 @@ function Home() {
               <AboutSection />
               <EventHighlight />
               <FeaturedBanner />
-              <MarqueeStrip />
           </main>
           <Footer />
+          <MarqueeStrip />
         </div>
     );
 }

@@ -10,8 +10,8 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: 'Competitions', href: '#' },
-    { name: 'Events', href: '#' },
+    { name: 'Competitions', href: '/competitions' },
+    { name: 'Events', href: '/events' },
     { name: 'Kartavya', href: '#' },
     { name: 'MUN', href: '#' },
     { name: 'CA Program', href: '#' },
@@ -20,6 +20,9 @@ function Navbar() {
 
   // GSAP Scroll Hide/Show Logic
   useEffect(() => {
+    const aboutSection = document.querySelector('#about-section');
+    if (!aboutSection) return; // Don't run on pages without #about-section
+
     let ctx = gsap.context(() => {
       ScrollTrigger.create({
         trigger: '#about-section', 

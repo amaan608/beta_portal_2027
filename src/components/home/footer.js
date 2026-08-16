@@ -7,8 +7,8 @@ import mailIcon from '../../assets/images/envelope.svg';
 import phoneIcon from '../../assets/images/telephone.svg';
 
 const quickLinks = [
-  { label: 'Competitions', href: '#' },
-  { label: 'Events', href: '#' },
+  { label: 'Competitions', href: '/competitions' },
+  { label: 'Events', href: '/events' },
   { label: 'Kartavya', href: '#' },
   { label: 'MUN', href: '#' },
   { label: 'Campus Ambassador', href: '#' },
@@ -20,21 +20,21 @@ const contacts = [
     name: 'Mayank Sahu',
     role: 'PR Head',
     phone: '+91 8827412678',
-    email: 'mayank@alcheringa.in',
+    email: 'mayank@alcheringa.co.in',
   },
   {
     name: 'Shubham Kumar',
     role: 'PR Head',
-    phone: '+91 72096 88170',
-    email: 'shubham@alcheringa.in',
+    phone: '+91 7209688170',
+    email: 'shubham@alcheringa.co.in',
   },
 ];
 
 const socials = [
-  { icon: facebookIcon, href: '#', alt: 'Facebook' },
-  { icon: twitterIcon, href: '#', alt: 'Twitter' },
-  { icon: instagramIcon, href: '#', alt: 'Instagram' },
-  { icon: youtubeIcon, href: '#', alt: 'YouTube' },
+  { icon: facebookIcon, href: 'https://www.facebook.com/alcheringaiitg/', alt: 'Facebook' },
+  { icon: twitterIcon, href: 'https://x.com/alcheringaiitg/', alt: 'Twitter' },
+  { icon: instagramIcon, href: 'https://www.instagram.com/alcheringaiitg/', alt: 'Instagram' },
+  { icon: youtubeIcon, href: 'https://www.youtube.com/@alcheringaiitg/', alt: 'YouTube' },
 ];
 
 function Footer() {
