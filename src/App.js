@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import CustomCursor from './components/CustomCursor';
 
 // Import all your page components
 import Home from './pages/home';
@@ -13,7 +14,10 @@ import Team from './pages/team';
 function App() {
   return (
     <Router>
-      <div className="App w-full min-h-screen bg-black">
+      <div className="App w-full min-h-screen bg-black relative">
+        {/* Global Custom Cursor placed here so it runs on all pages */}
+        <CustomCursor />
+        
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/competitions" element={<Competitions />} />
