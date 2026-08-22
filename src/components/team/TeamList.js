@@ -8,55 +8,55 @@ const teamData = [
     department: "Public Relations and Media",
     members: [
       { name: "Mayank Sahu", position: "Public Relations Head", phone: "+91 8827412678", email: "mayank@alcheringa.co.in", image: "Mayank.jpg" },
-      { name: "Shubham Kumar", position: "Public Relations Head", phone: "+91 7209688170", email: "shubham@alcheringa.co.in", image: "Shubham.jpg" },
+      { name: "Shubham Kumar", position: "Public Relations Head", phone: "+91 7209688170", email: "shubham@alcheringa.co.in", image: "Shubham.JPG" },
       { name: "Rajat Jain", position: "Media and Outreach Head", phone: "+91 772709933", email: "rajat@alcheringa.co.in", image: "Rajat.jpeg" }
     ]
   },
   {
     department: "Corporate Relations and Marketing",
     members: [
-      { name: "Shahdat", position: "Corporate Relations and Marketing Head", phone: "+91 8822886099", email: "shahdat@alcheringa.co.in", image: "Shahdat.jpg" },
-      { name: "Debopriya Das", position: "Corporate Relations and Marketing Head", phone: "+91 8585861289", email: "debopriyadas@alcheringa.co.in", image: "Debopriya.jpg" },
-      { name: "Vansh Yadav", position: "Corporate Relations and Marketing Head", phone: "+91 7206120179", email: "Vansh@alcheringa.co.in", image: "Vansh.jpg" },
-      { name: "Anurag", position: "Corporate Relations and Marketing Head", phone: "+91 6266796402", email: "anurag@alcheringa.co.in", image: "Anurag.jpg" }
+      { name: "Shahdat", position: "Corporate Relations and Marketing Head", phone: "+91 8822886099", email: "shahdat@alcheringa.co.in", image: "Shahdat.JPG" },
+      { name: "Debopriya Das", position: "Corporate Relations and Marketing Head", phone: "+91 8585861289", email: "debopriyadas@alcheringa.co.in", image: "Debopriya.JPG" },
+      { name: "Vansh Yadav", position: "Corporate Relations and Marketing Head", phone: "+91 7206120179", email: "Vansh@alcheringa.co.in", image: "Vansh.JPG" },
+      { name: "Anurag", position: "Corporate Relations and Marketing Head", phone: "+91 6266796402", email: "anurag@alcheringa.co.in", image: "Anurag.JPG" }
     ]
   },
   {
     department: "Events",
     members: [
-      { name: "Manas Dhote", position: "Pronites Coordinator", phone: "+91 7470343605", email: "manas@alcheringa.co.in", image: "Manas.jpg" },
-      { name: "Soumik Roy", position: "Campaigns Head", phone: "+91 7318866005", email: "soumik@alcheringa.co.in", image: "Soumik.jpg" },
-      { name: "Vedhansh Sisodiya", position: "Event Management Head", phone: "+91 9340989957", email: "vedhansh@alcheringa.co.in", image: "Vedhansh.jpg" }
+      { name: "Manas Dhote", position: "Pronites Coordinator", phone: "+91 7470343605", email: "manas@alcheringa.co.in", image: "Manas.JPG" },
+      { name: "Soumik Roy", position: "Campaigns Head", phone: "+91 7318866005", email: "soumik@alcheringa.co.in", image: "Soumik.JPG" },
+      { name: "Vedhansh Sisodiya", position: "Event Management Head", phone: "+91 9340989957", email: "vedhansh@alcheringa.co.in", image: "Vedhansh.JPG" }
     ]
   },
   {
     department: "Team Creatives",
     members: [
-      { name: "Karan Dhokariya", position: "Web Design Head", phone: "+91 9284210932", email: "karan@alcheringa.co.in", image: "Karan.jpg" },
-      { name: "Haridev", position: "Creatives Head", phone: "+91 9342887341", email: "haridev@alcheringa.co.in", image: "Haridev.jpg" },
-      { name: "Raina Agrawal", position: "Digital Media Head", phone: "+91 8269522500", email: "raina@alcheringa.co.in", image: "Raina.jpg" }
+      { name: "Karan Dhokariya", position: "Web Design Head", phone: "+91 9284210932", email: "karan@alcheringa.co.in", image: "Karan.JPG" },
+      { name: "Haridev", position: "Creatives Head", phone: "+91 9342887341", email: "haridev@alcheringa.co.in", image: "Haridev.JPG" },
+      { name: "Raina Agrawal", position: "Digital Media Head", phone: "+91 8269522500", email: "raina@alcheringa.co.in", image: "Raina.JPG" }
     ]
   },
   {
     department: "Web and App Operations",
     members: [
-      { name: "Amaan Farooq", position: "Web Operations Head", phone: "+91 8493944242", email: "amaan@alcheringa.co.in", image: "Amaan.jpg" },
-      { name: "Raunak Khetan", position: "Web Operations Head", phone: "+91 9931315284", email: "raunak@alcheringa.co.in", image: "Raunak.jpg" },
-      { name: "Kaustubh Goel", position: "AppOps Head", phone: "+91 9627677722", email: "kaustubh@alcheringa.co.in", image: "Kaustubh.jpg" }
+      { name: "Amaan Farooq", position: "Web Operations Head", phone: "+91 8493944242", email: "amaan@alcheringa.co.in", image: "Amaan.JPG" },
+      { name: "Raunak Khetan", position: "Web Operations Head", phone: "+91 9931315284", email: "raunak@alcheringa.co.in", image: "Raunak.JPG" },
+      { name: "Kaustubh Goel", position: "AppOps Head", phone: "+91 9627677722", email: "kaustubh@alcheringa.co.in", image: "Kaustubh.JPG" }
     ]
   },
   {
     department: "MUN",
     members: [
-      { name: "Rishav", position: "Secretary General", phone: "+91 7023315765", email: "rishav@alcheringa.co.in", image: "Rishav.jpg" },
-      { name: "Ananya", position: "Director General IITGMUN", phone: "+91 9121066648", email: "ananya@alcheringa.co.in", image: "Ananya.jpg" }
+      { name: "Rishav", position: "Secretary General", phone: "+91 7023315765", email: "rishav@alcheringa.co.in", image: "Rishav.JPG" },
+      { name: "Ananya", position: "Director General IITGMUN", phone: "+91 9121066648", email: "ananya@alcheringa.co.in", image: "Ananya.JPG" }
     ]
   },
   {
     department: "Convenor and Finance Head",
     members: [
-      { name: "Vivek Saini", position: "Convenor", phone: "+91 9368226899", email: "vivekk@alcheringa.co.in", image: "Vivek.jpg" },
-      { name: "Anshul Tanwar", position: "Finance Head", phone: "+91 7015364736", email: "anshul@alcheringa.co.in", image: "Anshul.jpg" }
+      { name: "Vivek Saini", position: "Convenor", phone: "+91 9368226899", email: "vivekk@alcheringa.co.in", image: "Vivek.JPG" },
+      { name: "Anshul Tanwar", position: "Finance Head", phone: "+91 7015364736", email: "anshul@alcheringa.co.in", image: "Anshul.JPG" }
     ]
   }
 ];
