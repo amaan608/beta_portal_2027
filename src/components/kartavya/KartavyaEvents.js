@@ -55,7 +55,7 @@ function KartavyaEvents() {
           <div className="md:w-1/3">
             <MaskedHeading
               lines={['ABOUT KARTAVYA']}
-              className="font-heading text-[64px] font-[500] uppercase text-white leading-none"
+              className="font-heading text-[38px] md:text-[64px] font-[500] uppercase text-white leading-none"
             />
           </div>
           <div className="md:w-1/2">
@@ -67,9 +67,10 @@ function KartavyaEvents() {
 
         {/* Events List */}
         <div>
-          <h2 className="font-heading text-4xl md:text-5xl uppercase mb-20 text-white">
-            Our Events
-          </h2>
+          <MaskedHeading
+              lines={['OUR EVENTS']}
+              className="font-heading text-[36px] md:text-[60px] font-[500] uppercase text-white"
+            />
 
           {/* Increased to gap-32 (128px) for massive space between separate events */}
           <div className="flex flex-col gap-32">

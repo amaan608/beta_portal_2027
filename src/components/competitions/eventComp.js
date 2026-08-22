@@ -22,16 +22,16 @@ function EventComp() {
   };
 
   return (
-    <section className="bg-black text-white py-16 px-[50px] flex flex-col md:flex-row gap-80">
+    <section className="bg-black text-white py-16 px-6 md:px-[50px] flex flex-col md:flex-row gap-10 md:gap-32">
       {/* Left: text + arrows, fixed */}
-      <div className="shrink-0 flex flex-col justify-center">
+      <div className="shrink-0 flex flex-col justify-center mb-8 md:mb-0">
         <MaskedHeading
           lines={['FEATURED', 'COMPETITIONS']}
-          className="font-heading font-[500] text-[80px] leading-tight uppercase"
+          className="font-heading font-[500] text-[44px] md:text-[80px] leading-tight uppercase"
         />
         
 
-        <div className="flex gap-3 mt-20">
+        <div className="flex gap-3 mt-10 md:mt-20">
           <button
             onClick={goPrev}
             className="w-[100px] h-[50px] flex items-center justify-center bg-[#1F1F1F] hover:bg-[#2f2f2f] transition"
@@ -50,7 +50,7 @@ function EventComp() {
       </div>
 
       {/* Right: featured + peek carousel */}
-      <div className="flex-1 relative overflow-hidden py-14 px-6">
+      <div className="flex-1 relative overflow-hidden py-10 md:py-14 px-10 md:px-6">
         <div
           className="flex items-center gap-6 transition-transform duration-500 ease-out"
           style={{ transform: `translateX(-${activeIndex * (300 + 24)}px)` }}

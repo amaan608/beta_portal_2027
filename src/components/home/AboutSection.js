@@ -63,7 +63,7 @@ function AboutSection() {
         >
           <MaskedHeading
             lines={['ABOUT', 'ALCHERINGA']}
-            className="font-heading text-[#FC6840] text-[80px] md:text-[96px] uppercase leading-none text-center"
+            className="font-heading text-[#FC6840] text-[44px] md:text-[96px] uppercase leading-none text-center"
           />
         </div>
 

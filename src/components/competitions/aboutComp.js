@@ -9,7 +9,7 @@ function AboutComp() {
       <div>
         <MaskedHeading
           lines={['ABOUT', 'COMPETITIONS']}
-          className="font-heading font-[500] text-[96px] leading-[1] uppercase"
+          className="font-heading font-[500] text-[44px] md:text-[96px] leading-[1] uppercase"
         />
       </div>
 

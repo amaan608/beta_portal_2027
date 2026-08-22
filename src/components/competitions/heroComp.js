@@ -61,6 +61,8 @@ function HeroComp() {
       tl.to(imageRef.current, {
         width: '100vw',
         height: '100vh',
+        maxWidth: 'none',
+        maxHeight: 'none',
         borderRadius: '0px',
         duration: 3,
         ease: 'power2.inOut',
@@ -96,7 +98,7 @@ function HeroComp() {
     >
       <div
         ref={imageRef}
-        className="absolute z-0 w-[400px] h-[250px] overflow-hidden rounded-md shadow-2xl bg-black"
+        className="absolute z-0 w-[320px] sm:w-[360px] md:w-[400px] h-[200px] sm:h-[225px] md:h-[250px] overflow-hidden shadow-2xl bg-black"
       >
         <img
           ref={mediaRef}
@@ -106,17 +108,23 @@ function HeroComp() {
         />
       </div>
 
-      <div className="relative z-10 w-full h-full max-w-7xl mx-auto px-10 flex flex-col justify-center pointer-events-none">
-        <div ref={textLeftRef} className="absolute left-[127px] top-[240px]">
-          <h1 className="font-heading text-[#FC6840] font-[500] text-[96px] leading-tight uppercase m-0">
+      <div className="relative z-10 w-full h-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 flex flex-col justify-center pointer-events-none">
+        <div
+          ref={textLeftRef}
+          className="absolute left-5 sm:left-10 md:left-[127px] top-[17%] sm:top-[20%] md:top-[240px]"
+        >
+          <h1 className="font-heading text-[#FC6840] font-[500] text-[64px] sm:text-7xl md:text-[96px] leading-[0.95] uppercase m-0">
             FROM
             <br />
             PASSION
           </h1>
         </div>
 
-        <div ref={textRightRef} className="absolute left-[1062px] top-[357px] text-right">
-          <h2 className="font-heading text-[#F8C93D] text-[80px] font-[500] leading-tight uppercase m-0">
+        <div
+          ref={textRightRef}
+          className="absolute right-5 sm:right-10 md:right-auto md:left-[1062px] top-[65%] sm:top-[30%] md:top-[357px] text-right"
+        >
+          <h2 className="font-heading text-[#F8C93D] text-[54px] sm:text-6xl md:text-[80px] font-[500] leading-[0.95] uppercase m-0">
             TO
             <br />
             GLORY
@@ -125,7 +133,7 @@ function HeroComp() {
 
         <p
           ref={subtitleRef}
-          className="absolute top-[500px] left-[430px] max-w-[420px] text-center text-white font-body text-[20px] font-[400] m-0"
+          className="absolute bottom-20 sm:bottom-14 md:bottom-auto md:top-[500px] left-1/2 -translate-x-1/2 md:translate-x-0 md:left-[430px] w-full max-w-[340px] sm:max-w-[420px] text-center text-white font-body text-sm sm:text-base md:text-[20px] font-[400] m-0 px-4"
         >
           Step into the arena, challenge your limits, and compete for glory at
           Alcheringa.

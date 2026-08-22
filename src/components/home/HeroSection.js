@@ -59,6 +59,8 @@ function HeroSection() {
       tl.to(imageRef.current, {
         width: '100vw',
         height: '100vh',
+        maxWidth: 'none',
+        maxHeight: 'none',
         borderRadius: '0px',
         duration: 3,
         ease: 'power2.inOut',
@@ -93,7 +95,7 @@ function HeroSection() {
     >
       <div
         ref={imageRef}
-        className="absolute z-0 w-[400px] h-[250px] overflow-hidden rounded-md shadow-2xl bg-black"
+        className="absolute z-0 w-[320px] sm:w-[400px] md:w-[400px] h-[200px] sm:h-[225px] md:h-[250px] overflow-hidden rounded-md shadow-2xl bg-black"
       >
         <img
           ref={mediaRef}
@@ -104,17 +106,17 @@ function HeroSection() {
         <div className="absolute inset-0 bg-black/40 mix-blend-multiply pointer-events-none" />
       </div>
 
-      <div className="relative z-10 w-full h-full max-w-7xl mx-auto px-10 flex flex-col justify-center pointer-events-none">
-        <div ref={textLeftRef} className="absolute left-10 top-1/3">
-          <h1 className="font-heading text-[#FC6840] text-[64px] font-[500] leading-tight uppercase m-0">
+      <div className="relative z-10 w-full h-full max-w-7xl mx-auto px-5 sm:px-8 md:px-10 flex flex-col justify-center pointer-events-none">
+        <div ref={textLeftRef} className="absolute left-5 sm:left-8 md:left-10 top-[21%] sm:top-[24%] md:top-1/3">
+          <h1 className="font-heading text-[#FC6840] text-[58px] sm:text-7xl md:text-[64px] font-[500] leading-[0.95] uppercase m-0">
             The Countdown
             <br />
             Begins
           </h1>
         </div>
 
-        <div ref={textRightRef} className="absolute right-10 bottom-1/3 text-right">
-          <h2 className="font-heading text-[#F8C93D] text-[40px] font-[500] leading-tight uppercase m-0">
+        <div ref={textRightRef} className="absolute right-5 sm:right-8 md:right-10 bottom-[21%] sm:bottom-[24%] md:bottom-1/3 text-right">
+          <h2 className="font-heading text-[#F8C93D] text-[44px] sm:text-5xl md:text-[40px] font-[500] leading-[1] uppercase m-0">
             This January
             <br />
             Guwahati Gets Loud

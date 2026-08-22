@@ -16,35 +16,15 @@ function TeamHeroSection() {
   useEffect(() => {
     const container = containerRef.current;
     const media = mediaRef.current;
-    if (!container || !media) return;
+    const image = imageRef.current;
+    if (!container || !media || !image) return;
 
     const mediaFloat = 40;
 
-    const onMove = (e) => {
-      const rect = container.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
+    let mm = gsap.matchMedia();
 
-      gsap.to(media, {
-        x: x * mediaFloat * 2,
-        y: y * mediaFloat * 2,
-        duration: 1.25,
-        ease: 'power3.out',
-        overwrite: 'auto',
-      });
-    };
-
-    const onLeave = () => {
-      gsap.to(media, {
-        x: 0,
-        y: 0,
-        duration: 1.2,
-        ease: 'power3.out',
-        overwrite: 'auto',
-      });
-    };
-
-    let ctx = gsap.context(() => {
+    // GSAP scroll and floating effects only on desktop (768px+)
+    mm.add('(min-width: 768px)', () => {
       gsap.set(media, { scale: 1.15 });
 
       const tl = gsap.timeline({
@@ -54,12 +34,15 @@ function TeamHeroSection() {
           end: '+=200%',
           scrub: 1,
           pin: true,
+          invalidateOnRefresh: true,
         },
       });
 
-      tl.to(imageRef.current, {
+      tl.to(image, {
         width: '100vw',
         height: '100vh',
+        maxWidth: 'none',
+        maxHeight: 'none',
         borderRadius: '0px',
         duration: 3,
         ease: 'power2.inOut',
@@ -74,15 +57,42 @@ function TeamHeroSection() {
         },
         '<'
       );
+
+      const onMove = (e) => {
+        const rect = container.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+        gsap.to(media, {
+          x: x * mediaFloat * 2,
+          y: y * mediaFloat * 2,
+          duration: 1.25,
+          ease: 'power3.out',
+          overwrite: 'auto',
+        });
+      };
+
+      const onLeave = () => {
+        gsap.to(media, {
+          x: 0,
+          y: 0,
+          duration: 1.2,
+          ease: 'power3.out',
+          overwrite: 'auto',
+        });
+      };
+
+      container.addEventListener('mousemove', onMove);
+      container.addEventListener('mouseleave', onLeave);
+
+      return () => {
+        container.removeEventListener('mousemove', onMove);
+        container.removeEventListener('mouseleave', onLeave);
+      };
     });
 
-    container.addEventListener('mousemove', onMove);
-    container.addEventListener('mouseleave', onLeave);
-
     return () => {
-      container.removeEventListener('mousemove', onMove);
-      container.removeEventListener('mouseleave', onLeave);
-      ctx.revert();
+      mm.revert();
     };
   }, []);
 
@@ -90,49 +100,57 @@ function TeamHeroSection() {
     <section
       id="hero-section"
       ref={containerRef}
-      className="relative w-full h-screen bg-black overflow-hidden flex flex-col items-center justify-center"
+      className="relative w-full bg-black overflow-hidden flex flex-col items-center pt-20 pb-6 md:h-screen md:p-0 md:justify-center"
     >
+      {/* Top text on mobile / Left text on desktop */}
       <div
-        ref={imageRef}
-        className="absolute z-0 w-[450px] h-[280px] overflow-hidden rounded-md shadow-2xl bg-black flex flex-col justify-end"
+        ref={textLeftRef}
+        className="w-full px-5 text-left mb-5  md:mb-0 md:px-0 md:absolute md:left-10 md:top-1/3 md:w-auto transition-opacity z-10 pointer-events-none"
       >
-        <img
-          ref={mediaRef}
-          src={teamHeroImage}
-          alt="Alcheringa Team"
-          className="absolute inset-0 w-full h-full object-cover block will-change-transform"
-        />
-        <div className="absolute inset-0 bg-black/30 mix-blend-multiply pointer-events-none" />
+        <h1 className="font-heading text-[#FC6840] font-[500] text-[56px] sm:text-6xl md:text-7xl leading-[0.95] uppercase m-0">
+          The People
+        </h1>
       </div>
 
-      <div className="relative z-10 w-full h-full max-w-7xl mx-auto px-10 flex flex-col justify-center pointer-events-none">
-        <div ref={textLeftRef} className="absolute left-10 top-1/3 transition-opacity">
-          <h1 className="font-heading text-[#FC6840] text-5xl md:text-7xl leading-tight uppercase m-0">
-            The People
-          </h1>
+      {/* Full width edge-to-edge image on mobile (not rounded) / Centered expanding card on desktop */}
+      <div
+        ref={imageRef}
+        className="w-full my-2 md:my-0 md:absolute md:z-0 md:w-[450px] md:h-[280px] overflow-hidden rounded-none md:rounded-md shadow-2xl bg-black"
+      >
+        <div className="relative w-full aspect-[16/10] md:aspect-auto md:w-full md:h-full">
+          <img
+            ref={mediaRef}
+            src={teamHeroImage}
+            alt="Alcheringa Team"
+            className="w-full h-full object-cover block will-change-transform"
+          />
+          <div className="absolute inset-0 bg-black/30 mix-blend-multiply pointer-events-none" />
         </div>
+      </div>
 
+      {/* Bottom text on mobile / Right text and subtitle on desktop */}
+      <div className="w-full px-5 flex flex-col items-end md:px-0 md:contents z-10 pointer-events-none">
         <div
           ref={textRightRef}
-          className="absolute right-10 bottom-1/3 text-right transition-opacity"
+          className="w-full text-right mt-3 md:mt-0 md:absolute md:right-10 md:bottom-1/3 md:w-auto transition-opacity"
         >
-          <h2 className="font-heading text-[#F8C93D] text-3xl md:text-5xl leading-tight uppercase m-0">
+          <h2 className="font-heading font-[500] text-[#F8C93D] text-[44px] sm:text-4xl md:text-5xl leading-[1] uppercase m-0">
             Behind The
             <br />
             Experience
           </h2>
         </div>
-      </div>
 
-      <div
-        ref={subtitleRef}
-        className="absolute top-[calc(50%+180px)] w-full text-center z-10 pointer-events-none px-6 transition-opacity"
-      >
-        <p className="font-body text-[#A3A3A3] text-sm md:text-base font-medium">
-          Meet the people whose passion, creativity, and
-          <br />
-          teamwork bring Alcheringa to life.
-        </p>
+        <div
+          ref={subtitleRef}
+          className="w-full text-center mt-4 md:mt-0 md:absolute md:top-[calc(50%+180px)] md:px-6 transition-opacity"
+        >
+          <p className="font-body text-[#A3A3A3] text-sm md:text-base font-medium max-w-[340px] sm:max-w-none mx-auto">
+            Meet the people whose passion, creativity, and
+            <br className="hidden sm:inline" />
+            teamwork bring Alcheringa to life.
+          </p>
+        </div>
       </div>
     </section>
   );

@@ -50,13 +50,20 @@ function HeroEvents() {
     };
 
     let ctx = gsap.context(() => {
+      const isMobile = window.innerWidth < 768;
+      const startW = isMobile ? Math.min(window.innerWidth * 0.88, 330) : START_W;
+      const startH = isMobile ? Math.round(startW * 0.625) : START_H;
+      const startTop = isMobile ? '58%' : START_TOP;
+      const startYPercent = isMobile ? -50 : 0;
+
       // Keep events layout: centered lower image (no left/xPercent swap on expand)
       gsap.set(image, {
-        top: START_TOP,
+        top: startTop,
         left: '50%',
         xPercent: -50,
-        width: START_W,
-        height: START_H,
+        yPercent: startYPercent,
+        width: startW,
+        height: startH,
       });
       gsap.set(media, { scale: 1.15 });
 
@@ -74,8 +81,13 @@ function HeroEvents() {
       // Same expand feel as Team / Kartavya, from this lower position
       tl.to(image, {
         top: 0,
+        left: '50%',
+        xPercent: -50,
+        yPercent: 0,
         width: '100vw',
         height: '100vh',
+        maxWidth: 'none',
+        maxHeight: 'none',
         borderRadius: 0,
         duration: 3,
         ease: 'power2.inOut',
@@ -122,28 +134,28 @@ function HeroEvents() {
         />
       </div>
 
-      <div className="relative z-10 w-full h-full max-w-7xl mx-auto px-10 pointer-events-none">
+      <div className="relative z-10 w-full h-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 pointer-events-none">
         <div
           ref={textLeftRef}
-          className="absolute top-[90px] left-1/2 -translate-x-1/2 text-center"
+          className="absolute top-[100px] sm:top-24 md:top-[90px] left-1/2 -translate-x-1/2 text-center w-full px-4"
         >
-          <h1 className="font-heading text-[#FC6840] font-[500] text-[96px] leading-tight uppercase m-0 whitespace-nowrap">
+          <h1 className="font-heading text-[#FC6840] font-[500] text-6xl sm:text-7xl md:text-[96px] leading-[0.95] uppercase m-0">
             ONE FESTIVAL
           </h1>
         </div>
 
         <div
           ref={textRightRef}
-          className="absolute top-[200px] left-1/2 -translate-x-1/2 text-center"
+          className="absolute top-[180px] sm:top-[165px] md:top-[200px] left-1/2 -translate-x-1/2 text-center w-full px-4"
         >
-          <h2 className="font-heading text-[#F8C93D] text-[80px] font-[500] leading-tight uppercase m-0 whitespace-nowrap">
+          <h2 className="font-heading text-[#F8C93D] text-5xl sm:text-6xl md:text-[80px] font-[500] leading-[0.95] uppercase m-0">
             ENDLESS MEMORIES
           </h2>
         </div>
 
         <p
           ref={subtitleRef}
-          className="absolute top-[320px] left-1/2 -translate-x-1/2 max-w-[420px] text-center text-white font-body text-[20px] font-[400] m-0"
+          className="absolute top-[250px] sm:top-[235px] md:top-[320px] left-1/2 -translate-x-1/2 max-w-[340px] sm:max-w-[420px] text-center text-white font-body text-[15px] sm:text-base md:text-[20px] font-[400] m-0 px-4"
         >
           From electrifying performances to immersive experiences, discover
           everything that makes Alcheringa unforgettable.

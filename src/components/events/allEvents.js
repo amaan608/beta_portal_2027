@@ -9,42 +9,29 @@ const modules = [
     image: moduleImg,
   },
   {
-    title: 'ROCKATHON',
+    title: 'PROSHOWS',
     description:
       'Live band battles and original sets that light up the night. Bring your amp, bring your crowd.',
     image: moduleImg,
   },
   {
-    title: 'DANCE',
+    title: "CREATOR'S CAMP",
     description:
       'Solo and group showdowns across styles — from classical to contemporary street cyphers.',
     image: moduleImg,
   },
   {
-    title: 'DRAMA',
+    title: 'CRITICAL DAMAGE',
     description:
       'Stage stories, street plays, and monologues that hold the festival audience spellbound.',
     image: moduleImg,
   },
   {
-    title: 'MUSIC',
+    title: 'FLICKERINGA',
     description:
       'Vocals, instruments, and ensembles competing for the loudest cheer of Alcheringa.',
     image: moduleImg,
   },
-  {
-    title: 'FINE ARTS',
-    description:
-      'Canvases, installations, and live art that turn the campus into an open gallery.',
-    image: moduleImg,
-  },
-  {
-    title: 'LITERARY',
-    description:
-      'Debates, poetry, and wordplay — sharp minds, sharper lines, biggest stage.',
-    image: moduleImg,
-  },
-  
  
 ];
 
@@ -87,7 +74,7 @@ function AllEvents() {
       <div className="mb-16">
         <MaskedHeading
           lines={['OUR EVENTS']}
-          className="font-heading font-[500] text-[64px] leading-[1] uppercase"
+          className="font-heading font-[500] text-[38px] md:text-[64px] leading-[1] uppercase"
         />
       </div>
 

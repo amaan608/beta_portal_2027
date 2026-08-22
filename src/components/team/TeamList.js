@@ -9,7 +9,7 @@ const teamData = [
     members: [
       { name: "Mayank Sahu", position: "Public Relations Head", phone: "+91 8827412678", email: "mayank@alcheringa.co.in", image: "Mayank.jpg" },
       { name: "Shubham Kumar", position: "Public Relations Head", phone: "+91 7209688170", email: "shubham@alcheringa.co.in", image: "Shubham.jpg" },
-      { name: "Rajat Jain", position: "Media and Outreach Head", phone: "+91 772709933", email: "rajat@alcheringa.co.in", image: "Rajat.jpg" }
+      { name: "Rajat Jain", position: "Media and Outreach Head", phone: "+91 772709933", email: "rajat@alcheringa.co.in", image: "Rajat.jpeg" }
     ]
   },
   {
@@ -69,7 +69,7 @@ function TeamList() {
         <div id="about-section" className="mb-20">
           <MaskedHeading
             lines={['OUR TEAM']}
-            className="font-heading text-[64px] font-[500] uppercase text-white"
+            className="font-heading text-[38px] md:text-[64px] font-[500] uppercase text-white"
           />
         </div>
 

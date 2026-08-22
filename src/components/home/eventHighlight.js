@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import arrowLeft from '../../assets/images/arrow-left.png'
 import arrowRight from '../../assets/images/arrow-right.png'
+import MaskedHeading from '../MaskedHeading';
 
 const highlights = [
   require('../../assets/images/courousel.png'),
@@ -21,17 +22,24 @@ function EventHighlights() {
   };
 
   return (
-    <section className="bg-black text-white py-16 px-[50px] flex flex-col md:flex-row gap-80">
+    <section className="bg-black text-white py-16 px-6 md:px-[50px] flex flex-col md:flex-row gap-10 md:gap-32">
       {/* Left: text + arrows, fixed */}
-      <div className="shrink-0 flex flex-col justify-center">
-        <h2 className="font-heading font-[500] text-[80px] leading-tight">
-          EVENT<br />HIGHLIGHTS
-        </h2>
+      <div className="max-w-3xl mb-8 md:mb-24">
+        <div
+          className="mb-10"
+          style={{ textShadow: '0px 0px 0px #FFF' }}
+        >
+          <MaskedHeading
+            lines={['EVENT', 'HIGHLIGHTS']}
+            className="font-heading text-white text-[44px] md:text-[96px] uppercase leading-none "
+          />
+        </div>
+        
         <p className="font-body text-[20px] text-white mt-7">
           Have a glimpse of our spotlight events
         </p>
 
-        <div className="flex gap-3 mt-20">
+        <div className="flex gap-3 mt-10 md:mt-20">
           <button
             onClick={goPrev}
             className="w-[100px] h-[50px] flex items-center justify-center bg-[#1F1F1F] hover:bg-[#2f2f2f] transition"
@@ -50,7 +58,7 @@ function EventHighlights() {
       </div>
 
       {/* Right: featured + peek carousel */}
-      <div className="flex-1 relative overflow-hidden py-14 px-6">
+      <div className="flex-1 relative overflow-hidden py-8 md:py-14 px-4 md:px-6">
         <div
           className="flex items-center gap-6 transition-transform duration-500 ease-out"
           style={{ transform: `translateX(-${activeIndex * (300 + 24)}px)` }}

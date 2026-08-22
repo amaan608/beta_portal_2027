@@ -10,6 +10,7 @@ import Kartavya from './pages/kartavya';
 import MUN from './pages/mun';
 import CAProgram from './pages/ca';
 import Team from './pages/team';
+import Sponsors from './pages/sponsors';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/mun" element={<MUN />} />
           <Route path="/ca-program" element={<CAProgram />} />
           <Route path="/team" element={<Team />} />
+          <Route path="/sponsors" element={<Sponsors />} />
         </Routes>
       </div>
     </Router>

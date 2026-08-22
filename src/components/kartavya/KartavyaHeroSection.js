@@ -43,7 +43,24 @@ function KartavyaHeroSection() {
     };
 
     let ctx = gsap.context(() => {
-      gsap.set(imageRef.current, { yPercent: -50, top: '50%' });
+      const isMobile = window.innerWidth < 768;
+      if (isMobile) {
+        gsap.set(imageRef.current, {
+          top: '64%',
+          left: '50%',
+          right: 'auto',
+          xPercent: -50,
+          yPercent: -50,
+        });
+      } else {
+        gsap.set(imageRef.current, {
+          top: '50%',
+          right: '80px',
+          left: 'auto',
+          xPercent: 0,
+          yPercent: -50,
+        });
+      }
       gsap.set(media, { scale: 1.15 });
 
       const tl = gsap.timeline({
@@ -53,19 +70,38 @@ function KartavyaHeroSection() {
           end: '+=200%',
           scrub: 1,
           pin: true,
+          invalidateOnRefresh: true,
         },
       });
 
-      tl.to(imageRef.current, {
-        width: '100%',
-        height: '100%',
-        right: '0px',
-        top: '0%',
-        yPercent: 0,
-        borderRadius: '0px',
-        duration: 3,
-        ease: 'power2.inOut',
-      });
+      if (isMobile) {
+        tl.to(imageRef.current, {
+          width: '100vw',
+          height: '100vh',
+          maxWidth: 'none',
+          maxHeight: 'none',
+          top: '0%',
+          left: '0%',
+          xPercent: 0,
+          yPercent: 0,
+          borderRadius: '0px',
+          duration: 3,
+          ease: 'power2.inOut',
+        });
+      } else {
+        tl.to(imageRef.current, {
+          width: '100%',
+          height: '100%',
+          maxWidth: 'none',
+          maxHeight: 'none',
+          right: '0px',
+          top: '0%',
+          yPercent: 0,
+          borderRadius: '0px',
+          duration: 3,
+          ease: 'power2.inOut',
+        });
+      }
 
       tl.to(
         textRef.current,
@@ -96,16 +132,16 @@ function KartavyaHeroSection() {
     >
       <div
         ref={textRef}
-        className="absolute z-10 w-full h-full max-w-7xl mx-auto px-8 md:px-[80px] flex flex-col justify-center pointer-events-none left-0 right-0"
+        className="absolute z-10 w-full h-full max-w-7xl mx-auto px-6 sm:px-8 md:px-[80px] flex flex-col justify-start pt-24 sm:pt-28 md:pt-0 md:justify-center pointer-events-none left-0 right-0"
       >
         <div className="w-full md:w-1/2 flex flex-col">
-          <h1 className="font-heading text-[#FC6840] text-5xl md:text-7xl lg:text-[80px] leading-none uppercase m-0">
+          <h1 className="font-heading text-[#FC6840] text-5xl sm:text-6xl md:text-7xl lg:text-[80px] leading-[0.95] uppercase m-0">
             Where Purpose
           </h1>
-          <h1 className="font-heading text-[#F8C93D] text-5xl md:text-7xl lg:text-[80px] leading-none uppercase m-0 mb-8">
+          <h1 className="font-heading text-[#F8C93D] text-5xl sm:text-6xl md:text-7xl lg:text-[80px] leading-[0.95] uppercase m-0 mb-3 md:mb-8">
             Meets Action
           </h1>
-          <p className="font-body text-[#A3A3A3] text-lg md:text-xl font-medium max-w-md">
+          <p className="font-body text-[#A3A3A3] text-base sm:text-lg md:text-xl font-medium max-w-sm sm:max-w-md">
             Explore how Alcheringa turns its spirit of celebration into action
             for the community.
           </p>
@@ -114,7 +150,7 @@ function KartavyaHeroSection() {
 
       <div
         ref={imageRef}
-        className="absolute z-0 right-8 md:right-[80px] w-[90%] md:w-[45%] aspect-video bg-[#111111] overflow-hidden rounded-md shadow-2xl"
+        className="absolute z-0 w-[90%] sm:w-[80%] md:w-[45%] aspect-video bg-[#111111] overflow-hidden rounded-md shadow-2xl"
       >
         <img
           ref={mediaRef}

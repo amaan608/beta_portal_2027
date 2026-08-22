@@ -3,65 +3,36 @@ import moduleImg from '../../assets/images/allcomp.png';
 
 const modules = [
   {
-    title: 'PRONITES',
+    title: 'ROCO-O-PHONIX',
     description:
       'Non minim irure eiusmod duis qui cupidatat. Adipisicing esse consectetur sint magna. Dolore deserunt.',
     image: moduleImg,
   },
   {
-    title: 'ROCKATHON',
+    title: 'PARLIAMENTARY DEBATE',
     description:
       'Live band battles and original sets that light up the night. Bring your amp, bring your crowd.',
     image: moduleImg,
   },
   {
-    title: 'DANCE',
+    title: 'VOUGUE NATION',
     description:
       'Solo and group showdowns across styles — from classical to contemporary street cyphers.',
     image: moduleImg,
   },
   {
-    title: 'DRAMA',
+    title: 'ELECTRIC HEELS',
     description:
       'Stage stories, street plays, and monologues that hold the festival audience spellbound.',
     image: moduleImg,
   },
   {
-    title: 'MUSIC',
+    title: 'CLASS APART',
     description:
       'Vocals, instruments, and ensembles competing for the loudest cheer of Alcheringa.',
     image: moduleImg,
   },
-  {
-    title: 'FINE ARTS',
-    description:
-      'Canvases, installations, and live art that turn the campus into an open gallery.',
-    image: moduleImg,
-  },
-  {
-    title: 'LITERARY',
-    description:
-      'Debates, poetry, and wordplay — sharp minds, sharper lines, biggest stage.',
-    image: moduleImg,
-  },
-  {
-    title: 'QUIZZING',
-    description:
-      'Trivia that tests culture, science, and everything in between. Know it all, win it all.',
-    image: moduleImg,
-  },
-  {
-    title: 'FASHION',
-    description:
-      'Runway heat, theme walks, and design that turns every aisle into a spotlight.',
-    image: moduleImg,
-  },
-  {
-    title: 'DIGITAL',
-    description:
-      'Photography, film, and design challenges for creators who shoot, cut, and ship.',
-    image: moduleImg,
-  },
+
   {
     title: 'SPORTS',
     description:
@@ -109,7 +80,7 @@ function AllComp() {
       <div className="mb-16">
         <MaskedHeading
           lines={['COMPETITIONS', 'MODULES']}
-          className="font-heading font-[500] text-[64px] leading-[1] uppercase"
+          className="font-heading font-[500] text-[38px] md:text-[64px] leading-[1] uppercase"
         />
       </div>
 
