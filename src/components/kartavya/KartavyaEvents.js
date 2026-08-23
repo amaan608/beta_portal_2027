@@ -1,47 +1,52 @@
 import React from 'react';
-import MaskedHeading from '../MaskedHeading';
-import eventPlaceholder from '../../assets/images/kartavya-placeholder.jpg';
+import MaskedHeading from '../MaskedHeading'; 
+import Safher from '../../assets/images/comp-events/safher.png';
+import Udaan from '../../assets/images/comp-events/udaan.png';
+import Prithvi from '../../assets/images/comp-events/prithvi.png';
+import Expo from '../../assets/images/comp-events/expo.png';
+import Nes from '../../assets/images/comp-events/nes.png';
+
 
 const kartavyaEventsData = [
   {
     title: "SAFHER",
     description: "SafHer is an Alcheringa campaign focused on women's safety, empowerment, and upliftment, encouraging women to speak up, challenge injustice, and live confidently and freely.",
-    image: "safher.jpg"
+    image: Safher
   },
   {
     title: "UDAAN",
     description: "Udaan, formerly known as \"Bachpan,\" is a student-led initiative that empowers underprivileged children through education, creative workshops, and motivational activities, helping them discover their potential and pursue their dreams.",
-    image: "udaan.jpg"
+    image: Udaan
   },
   {
     title: "PRITHVI",
     description: "Project Prithvi is a climate awareness initiative that encourages individual responsibility and sustainable lifestyles through engaging activities and environmental education.",
-    image: "prithvi.jpg"
+    image: Prithvi
   },
   {
     title: "NORTH-EAST EXPO",
     description: "North-East Expo celebrates the rich cultural diversity of North-East India through performances, regional art, and traditional handicrafts.",
-    image: "northeast-expo.jpg"
+    image: Expo
   },
   {
     title: "NORTH-EAST SOCIAL SUMMIT",
     description: "North-East Social Summit is a platform for innovation and problem-solving, bringing people together to address the socio-political and cultural issues of North-East India.",
-    image: "social-summit.jpg"
+    image: Nes
   },
   {
     title: "SANRAKHAN",
     description: "Sanrakhan is a dual-purpose campaign promoting AIDS awareness and substance abuse prevention through educational workshops, safe practices, and stigma reduction.",
-    image: "sanrakhan.jpg"
+    image: Nes
   },
   {
     title: "MANSHAKTI",
     description: "Manshakti is a mental health and wellness campaign that supported people during the pandemic while appreciating and encouraging frontline healthcare workers through messages of solidarity.",
-    image: "manshakti.jpg"
+    image: Nes
   },
   {
     title: "AIKYAM",
     description: "AIKYAM is an initiative promoting unity and peace through thought-provoking discussions, performances, and fundraisers that address communal disharmony.",
-    image: "aikyam.jpg"
+    image: Nes
   }
 ];
 
@@ -80,9 +85,8 @@ function KartavyaEvents() {
                 {/* Event Image - Increased mb-6 to mb-16 (64px) for perfect spacing above text */}
                 <div className="w-full aspect-[16/9] md:aspect-[21/9] bg-[#111111] mb-12 md:mb-16 overflow-hidden rounded-md">
                   <img 
-                    src={event.image ? `/kartavya-images/${event.image}` : eventPlaceholder} 
+                    src={event.image} 
                     alt={event.title} 
-                    onError={(e) => { e.target.src = eventPlaceholder }}
                     className="w-full h-full object-cover"
                   />
                 </div>

@@ -1,36 +1,40 @@
 import MaskedHeading from '../MaskedHeading';
-import moduleImg from '../../assets/images/allevents.png';
+import Proshows from '../../assets/images/comp-events/Proshows.png';
+import Pronite from '../../assets/images/comp-events/Pronite.png';
+import Creator from '../../assets/images/comp-events/Quiz.png';
+import Flick from '../../assets/images/comp-events/flickeringa.png';
+import Critical from '../../assets/images/comp-events/critical-damage.png';
 
 const modules = [
   {
     title: 'PRONITES',
     description:
       'Non minim irure eiusmod duis qui cupidatat. Adipisicing esse consectetur sint magna. Dolore deserunt.',
-    image: moduleImg,
+    image: Pronite,
   },
   {
     title: 'PROSHOWS',
     description:
       'Live band battles and original sets that light up the night. Bring your amp, bring your crowd.',
-    image: moduleImg,
+    image: Proshows,
   },
   {
     title: "CREATOR'S CAMP",
     description:
       'Solo and group showdowns across styles — from classical to contemporary street cyphers.',
-    image: moduleImg,
+    image: Creator,
   },
   {
     title: 'CRITICAL DAMAGE',
     description:
       'Stage stories, street plays, and monologues that hold the festival audience spellbound.',
-    image: moduleImg,
+    image: Critical,
   },
   {
     title: 'FLICKERINGA',
     description:
       'Vocals, instruments, and ensembles competing for the loudest cheer of Alcheringa.',
-    image: moduleImg,
+    image: Flick,
   },
  
 ];

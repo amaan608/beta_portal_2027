@@ -1,43 +1,69 @@
 import MaskedHeading from '../MaskedHeading';
-import moduleImg from '../../assets/images/allcomp.png';
+import Class from '../../assets/images/comp-events/Class-Apart.png';
+import Literary from '../../assets/images/comp-events/Litreray.png';
+import Art from '../../assets/images/comp-events/art-Talkies.png';
+import Lights from '../../assets/images/comp-events/Lights-camera-action.png';
+import Music from '../../assets/images/comp-events/Music.png';
+import Sports from '../../assets/images/comp-events/sports.png';
+import Quiz from '../../assets/images/comp-events/Quiz.png';
+import Drama from '../../assets/images/comp-events/Drama.png';
+import Vouge from '../../assets/images/comp-events/Vouge-Nation.png';
 
 const modules = [
   {
-    title: 'ROCO-O-PHONIX',
-    description:
-      'Non minim irure eiusmod duis qui cupidatat. Adipisicing esse consectetur sint magna. Dolore deserunt.',
-    image: moduleImg,
-  },
-  {
-    title: 'PARLIAMENTARY DEBATE',
-    description:
-      'Live band battles and original sets that light up the night. Bring your amp, bring your crowd.',
-    image: moduleImg,
-  },
-  {
-    title: 'VOUGUE NATION',
-    description:
-      'Solo and group showdowns across styles — from classical to contemporary street cyphers.',
-    image: moduleImg,
-  },
-  {
-    title: 'ELECTRIC HEELS',
-    description:
-      'Stage stories, street plays, and monologues that hold the festival audience spellbound.',
-    image: moduleImg,
-  },
-  {
     title: 'CLASS APART',
     description:
+      'Non minim irure eiusmod duis qui cupidatat. Adipisicing esse consectetur sint magna. Dolore deserunt.',
+    image: Class,
+  },
+  {
+    title: 'LITERARY',
+    description:
+      'Live band battles and original sets that light up the night. Bring your amp, bring your crowd.',
+    image: Literary,
+  },
+  {
+    title: 'ART TALKIES',
+    description:
+      'Solo and group showdowns across styles — from classical to contemporary street cyphers.',
+    image: Art,
+  },
+  {
+    title: 'LIGHTS CAMERA ACTION',
+    description:
+      'Stage stories, street plays, and monologues that hold the festival audience spellbound.',
+    image: Lights,
+  },
+  {
+    title: 'MUSIC',
+    description:
       'Vocals, instruments, and ensembles competing for the loudest cheer of Alcheringa.',
-    image: moduleImg,
+    image: Music,
   },
 
   {
     title: 'SPORTS',
     description:
       'High-energy contests that push stamina, skill, and squad spirit across the fest.',
-    image: moduleImg,
+    image: Sports,
+  },
+  {
+    title: 'QUIZ',
+    description:
+      'High-energy contests that push stamina, skill, and squad spirit across the fest.',
+    image: Quiz,
+  },
+  {
+    title: 'DRAMA',
+    description:
+      'High-energy contests that push stamina, skill, and squad spirit across the fest.',
+    image:  Drama,
+  },
+  {
+    title: 'VOUGE NATION',
+    description:
+      'High-energy contests that push stamina, skill, and squad spirit across the fest.',
+    image: Vouge,
   },
 ];
 
