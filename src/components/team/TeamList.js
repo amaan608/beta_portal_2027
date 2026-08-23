@@ -5,7 +5,7 @@ import memberPlaceholder from '../../assets/images/member-placeholder.jpg';
 const teamData = [
   
   {
-    department: "Public Relations and Media",
+    department: "Public Relations and Branding",
     members: [
       { name: "Mayank Sahu", position: "Public Relations Head", phone: "+91 8827412678", email: "mayank@alcheringa.co.in", image: "Mayank.JPG" },
       { name: "Shubham Kumar", position: "Public Relations Head", phone: "+91 7209688170", email: "shubham@alcheringa.co.in", image: "Shubham.JPG" },
@@ -17,7 +17,7 @@ const teamData = [
     members: [
       { name: "Shahdat", position: "Corporate Relations and Marketing Head", phone: "+91 8822886099", email: "shahdat@alcheringa.co.in", image: "Shahdat.JPG" },
       { name: "Debopriya Das", position: "Corporate Relations and Marketing Head", phone: "+91 8585861289", email: "debopriyadas@alcheringa.co.in", image: "Debopriya.JPG" },
-      { name: "Vansh Yadav", position: "Corporate Relations and Marketing Head", phone: "+91 7206120179", email: "Vansh@alcheringa.co.in", image: "Vansh.jpg" },
+      { name: "Vansh Yadav", position: "Corporate Relations and Marketing Head", phone: "+91 7206120179", email: "vansh@alcheringa.co.in", image: "Vansh.jpg" },
       { name: "Anurag", position: "Corporate Relations and Marketing Head", phone: "+91 6266796402", email: "anurag@alcheringa.co.in", image: "Anurag.JPG" }
     ]
   },
