@@ -18,7 +18,7 @@ const teamData = [
       { name: "Shahdat", position: "Corporate Relations and Marketing Head", phone: "+91 8822886099", email: "shahdat@alcheringa.co.in", image: "Shahdat.JPG" },
       { name: "Debopriya Das", position: "Corporate Relations and Marketing Head", phone: "+91 8585861289", email: "debopriyadas@alcheringa.co.in", image: "Debopriya.JPG" },
       { name: "Vansh Yadav", position: "Corporate Relations and Marketing Head", phone: "+91 7206120179", email: "vansh@alcheringa.co.in", image: "Vansh.jpg" },
-      { name: "Anurag", position: "Corporate Relations and Marketing Head", phone: "+91 6266796402", email: "anurag@alcheringa.co.in", image: "Anurag.JPG" }
+      { name: "Anurag Solanki", position: "Corporate Relations and Marketing Head", phone: "+91 6266796402", email: "anurag@alcheringa.co.in", image: "Anurag.JPG" }
     ]
   },
   {
@@ -53,7 +53,7 @@ const teamData = [
     ]
   },
   {
-    department: "Convenor and Finance Head",
+    department: "OVERALL COORDINATORS",
     members: [
       { name: "Vivek Saini", position: "Convenor", phone: "+91 9368226899", email: "vivekk@alcheringa.co.in", image: "Vivek.JPG" },
       { name: "Anshul Tanwar", position: "Finance Head", phone: "+91 7015364736", email: "anshul@alcheringa.co.in", image: "Anshul.JPG" }

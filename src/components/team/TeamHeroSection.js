@@ -25,7 +25,7 @@ function TeamHeroSection() {
 
     // GSAP scroll and floating effects only on desktop (768px+)
     mm.add('(min-width: 768px)', () => {
-      gsap.set(media, { scale: 1.15 });
+      gsap.set(media, { scale: 1 });
 
       const tl = gsap.timeline({
         scrollTrigger: {

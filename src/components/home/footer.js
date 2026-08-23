@@ -50,7 +50,7 @@ function Footer() {
             <div className="flex flex-col items-start justify-center">
               <p className="text-[15px] font-bold">IIT Guwahati's</p>
               <p className="text-[34px] font-bold leading-[38px]">Alcheringa</p>
-              <p className="text-[15px] font-bold ml-[130px]">2026</p>
+              <p className="text-[15px] font-bold ml-[130px]">2027</p>
             </div>
           </div>
 
