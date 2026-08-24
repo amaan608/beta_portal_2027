@@ -12,57 +12,39 @@ import Vouge from '../../assets/images/comp-events/Vouge-Nation.png';
 const modules = [
   {
     title: 'CLASS APART',
-    description:
-      'Non minim irure eiusmod duis qui cupidatat. Adipisicing esse consectetur sint magna. Dolore deserunt.',
     image: Class,
   },
   {
     title: 'LITERARY',
-    description:
-      'Live band battles and original sets that light up the night. Bring your amp, bring your crowd.',
     image: Literary,
   },
   {
     title: 'ART TALKIES',
-    description:
-      'Solo and group showdowns across styles — from classical to contemporary street cyphers.',
     image: Art,
   },
   {
     title: 'LIGHTS CAMERA ACTION',
-    description:
-      'Stage stories, street plays, and monologues that hold the festival audience spellbound.',
     image: Lights,
   },
   {
     title: 'MUSIC',
-    description:
-      'Vocals, instruments, and ensembles competing for the loudest cheer of Alcheringa.',
     image: Music,
   },
 
   {
     title: 'SPORTS',
-    description:
-      'High-energy contests that push stamina, skill, and squad spirit across the fest.',
     image: Sports,
   },
   {
     title: 'QUIZ',
-    description:
-      'High-energy contests that push stamina, skill, and squad spirit across the fest.',
     image: Quiz,
   },
   {
     title: 'DRAMA',
-    description:
-      'High-energy contests that push stamina, skill, and squad spirit across the fest.',
     image:  Drama,
   },
   {
     title: 'VOUGE NATION',
-    description:
-      'High-energy contests that push stamina, skill, and squad spirit across the fest.',
     image: Vouge,
   },
 ];
@@ -84,17 +66,6 @@ function ModuleCard({ title, description, image }) {
         <h3 className="font-heading text-white text-[28px] font-[500] leading-none uppercase m-0 shrink-0">
           {title}
         </h3>
-
-        <p
-          className="
-            font-body text-[14px] leading-[1.4] text-white/60 m-0 mt-2
-            max-h-0 opacity-0 overflow-hidden
-            transition-[max-height,opacity] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
-            group-hover:max-h-[72px] group-hover:opacity-100
-          "
-        >
-          {description}
-        </p>
       </div>
     </article>
   );

@@ -5,6 +5,9 @@ import Udaan from '../../assets/images/comp-events/udaan.png';
 import Prithvi from '../../assets/images/comp-events/prithvi.png';
 import Expo from '../../assets/images/comp-events/expo.png';
 import Nes from '../../assets/images/comp-events/nes.png';
+import Sanraksham from '../../assets/images/comp-events/sanrakshan.jpeg';
+import Mansakti from '../../assets/images/comp-events/mansakti.jpeg';
+import Aikyam from '../../assets/images/comp-events/aikyam.jpeg';
 
 
 const kartavyaEventsData = [
@@ -36,17 +39,17 @@ const kartavyaEventsData = [
   {
     title: "SANRAKHAN",
     description: "Sanrakhan is a dual-purpose campaign promoting AIDS awareness and substance abuse prevention through educational workshops, safe practices, and stigma reduction.",
-    image: Nes
+    image: Sanraksham
   },
   {
     title: "MANSHAKTI",
     description: "Manshakti is a mental health and wellness campaign that supported people during the pandemic while appreciating and encouraging frontline healthcare workers through messages of solidarity.",
-    image: Nes
+    image: Mansakti
   },
   {
     title: "AIKYAM",
     description: "AIKYAM is an initiative promoting unity and peace through thought-provoking discussions, performances, and fundraisers that address communal disharmony.",
-    image: Nes
+    image: Aikyam
   }
 ];
 
