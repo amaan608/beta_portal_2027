@@ -146,7 +146,7 @@ function TeamHeroSection() {
           className="w-full text-center mt-4 md:mt-0 md:absolute md:top-[calc(50%+180px)] md:px-6 transition-opacity"
         >
           <p className="font-body text-[#A3A3A3] text-sm md:text-base font-medium max-w-[340px] sm:max-w-none mx-auto">
-            Meet the people whose passion, creativity, and
+            Meet the people whose passion, creativity and
             <br className="hidden sm:inline" />
             {' '}teamwork bring Alcheringa to life.
           </p>
