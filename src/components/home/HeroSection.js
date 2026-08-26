@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import heroConcert from '../../assets/images/frame-145.jpg';
+import heroConcert from '../../assets/images/homeHero.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -95,7 +95,7 @@ function HeroSection() {
     >
       <div
         ref={imageRef}
-        className="absolute z-0 w-[320px] sm:w-[400px] md:w-[400px] h-[200px] sm:h-[225px] md:h-[250px] overflow-hidden rounded-md shadow-2xl bg-black"
+        className="absolute z-0 w-[320px] sm:w-[400px] md:w-[400px] h-[200px] sm:h-[225px] md:h-[250px] overflow-hidden rounded-md  bg-black"
       >
         <img
           ref={mediaRef}
@@ -103,7 +103,7 @@ function HeroSection() {
           alt="Alcheringa Stage"
           className="absolute inset-0 w-full h-full object-cover block will-change-transform"
         />
-        <div className="absolute inset-0 bg-black/40 mix-blend-multiply pointer-events-none" />
+        <div className="absolute " />
       </div>
 
       <div className="relative z-10 w-full h-full max-w-7xl mx-auto px-5 sm:px-8 md:px-10 flex flex-col justify-center pointer-events-none">

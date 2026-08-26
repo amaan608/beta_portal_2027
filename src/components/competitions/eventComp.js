@@ -4,10 +4,11 @@ import arrowLeft from '../../assets/images/arrow-left.png'
 import arrowRight from '../../assets/images/arrow-right.png'
 
 const highlights = [
-  require('../../assets/images/courousel.png'),
-  require('../../assets/images/courousel.png'),
-  require('../../assets/images/courousel.png'),
-  require('../../assets/images/courousel.png'),
+  require('../../assets/images/compCou1.png'),
+  require('../../assets/images/compCou2.png'),
+  require('../../assets/images/compCou3.png'),
+  require('../../assets/images/compCou4.png'),
+  require('../../assets/images/compCou5.png'),
 ];
 
 function EventComp() {

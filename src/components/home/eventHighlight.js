@@ -4,10 +4,11 @@ import arrowRight from '../../assets/images/arrow-right.png'
 import MaskedHeading from '../MaskedHeading';
 
 const highlights = [
-  require('../../assets/images/courousel.png'),
-  require('../../assets/images/courousel.png'),
-  require('../../assets/images/courousel.png'),
-  require('../../assets/images/courousel.png'),
+  require('../../assets/images/homeCou1.png'),
+  require('../../assets/images/homeCou2.png'),
+  require('../../assets/images/homeCou3.png'),
+  require('../../assets/images/homeCou4.png'),
+  require('../../assets/images/homeCou5.png'),
 ];
 
 function EventHighlights() {
