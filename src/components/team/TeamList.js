@@ -16,10 +16,10 @@ const teamData = [
     department: "Corporate Relations and Marketing",
     members: [
       { name: "Shahdat", position: "Corporate Relations and Marketing Head", phone: "+91 8822886099", email: "shahdat@alcheringa.co.in", image: "Shahdat.JPG" },
+      { name: "Anurag Solanki", position: "Corporate Relations and Marketing Head", phone: "+91 6266796402", email: "anurag@alcheringa.co.in", image: "Anurag.JPG" },
       { name: "Debopriya Das", position: "Corporate Relations and Marketing Head", phone: "+91 8585861289", email: "debopriyadas@alcheringa.co.in", image: "Debopriya.JPG" },
-      { name: "Vansh Yadav", position: "Corporate Relations and Marketing Head", phone: "+91 7206120179", email: "vansh@alcheringa.co.in", image: "Vansh.jpg" },
-      { name: "Anurag Solanki", position: "Corporate Relations and Marketing Head", phone: "+91 6266796402", email: "anurag@alcheringa.co.in", image: "Anurag.JPG" }
-    ]
+      { name: "Vansh Yadav", position: "Corporate Relations and Marketing Head", phone: "+91 7206120179", email: "vansh@alcheringa.co.in", image: "Vansh.jpeg" }
+       ]
   },
   {
     department: "Events",
