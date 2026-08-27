@@ -15,10 +15,7 @@ function AboutComp() {
 
       <div className="self-end max-w-[640px] text-left mt-20">
         <p className="font-body text-[20px] text-white/70">
-          Alcheringa has many competitions spread across various genres. They take
-          place during the three days with the prize distribution on the last day. People
-          all over the country participate in these competitions to win exciting prizes
-          and goodies and to witness one of India&apos;s biggest cultural festival.
+          Alcheringa has many competitions spread across various genres. They take place during the three days with the trophy distribution on the final day of competition . People all over the country participate in these competitions to win exciting prizes and goodies and to witness one of India's biggest cultural festival.
         </p>
       </div>
     </section>

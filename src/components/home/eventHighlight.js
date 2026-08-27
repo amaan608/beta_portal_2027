@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import arrowLeft from '../../assets/images/arrow-left.png'
 import arrowRight from '../../assets/images/arrow-right.png'
 import MaskedHeading from '../MaskedHeading';
@@ -13,6 +13,14 @@ const highlights = [
 
 function EventHighlights() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const goPrev = () => {
     setActiveIndex((prev) => (prev === 0 ? highlights.length - 1 : prev - 1));
@@ -59,17 +67,19 @@ function EventHighlights() {
       </div>
 
       {/* Right: featured + peek carousel */}
-      <div className="flex-1 relative overflow-hidden py-8 md:py-14 px-4 md:px-6">
+      <div className="flex-1 relative overflow-hidden py-16 w-full min-h-[500px] md:min-h-[600px]">
         <div
-          className="flex items-center gap-6 transition-transform duration-500 ease-out"
-          style={{ transform: `translateX(-${activeIndex * (300 + 24)}px)` }}
+          className="absolute top-1/2 left-1/2 flex items-center gap-6 transition-transform duration-500 ease-out"
+          style={{ 
+            transform: `translate(calc(-${isMobile ? 110 : 150}px - ${activeIndex * (isMobile ? 244 : 324)}px), -50%)` 
+          }}
         >
           {highlights.map((src, i) => (
             <img
               key={i}
               src={src}
               alt={`Event highlight ${i + 1}`}
-              className="shrink-0 w-[300px] h-auto transition-all duration-500 ease-out origin-center"
+              className="shrink-0 w-[220px] md:w-[300px] h-auto transition-all duration-500 ease-out origin-center"
               style={{
                 opacity: i === activeIndex ? 1 : 0.35,
                 filter: i === activeIndex ? 'blur(0px)' : 'blur(2px)',

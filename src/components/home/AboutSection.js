@@ -12,7 +12,7 @@ function AboutSection() {
   const stats = [
     { label: 'Footfall', target: 150000, suffix: '+' },
     { label: 'Events', target: 100, suffix: '+' },
-    { label: 'Competitions', target: 48, suffix: '+' },
+    { label: 'Competitions', target: 50, suffix: '+' },
   ];
 
   useEffect(() => {
