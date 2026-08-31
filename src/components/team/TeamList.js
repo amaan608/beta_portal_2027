@@ -55,7 +55,7 @@ const teamData = [
   {
     department: "OVERALL COORDINATORS",
     members: [
-      { name: "Vivek Saini", position: "Convenor", phone: "+91 9368226899", email: "vivekk@alcheringa.co.in", image: "Vivek.JPG" },
+      { name: "Vivek Saini", position: "Convenor", phone: "+91 9368226899", email: "vivek.k@alcheringa.co.in", image: "Vivek.JPG" },
       { name: "Anshul Tanwar", position: "Finance Head", phone: "+91 7015354736", email: "anshul@alcheringa.co.in", image: "Anshul.JPG" }
     ]
   }
