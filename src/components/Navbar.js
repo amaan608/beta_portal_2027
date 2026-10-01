@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import alcherLogo from '../assets/images/alcher-logo.svg'; 
+import { Target } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,7 +19,7 @@ function Navbar() {
     { name: 'Events', path: '/events' },
     { name: 'Kartavya', path: '/kartavya' },
     { name: 'MUN', path: '/mun' },
-    { name: 'CA Program', path: '/ca-program' },
+    { name: 'CA Program', path: 'https://caportal.alcheringa.co.in' },
     { name: 'Team', path: '/team' },
     { name: 'Sponsors', path: '/sponsors' },
   ];

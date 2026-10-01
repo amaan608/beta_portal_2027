@@ -55,6 +55,14 @@ function Footer() {
           </div>
 
           <div className="flex flex-col gap-2">
+            <p className="text-[16px] text-gray-300">For sponsorship related queries</p>
+            <a href="mailto:marketing@alcheringa.co.in" className="flex items-center gap-2 font-semibold">
+              <img src={mailIcon} alt="" className="w-4 h-4 bg-black "  />
+              <p className="text-[16px] font-body font-[500] text-white">marketing@alcheringa.co.in</p>
+            </a>
+          </div>
+
+          <div className="flex flex-col gap-2">
             <p className="text-[16px] text-gray-300">For business related queries</p>
             <a href="mailto:alcheringa@iitg.ac.in" className="flex items-center gap-2 font-semibold">
               <img src={mailIcon} alt="" className="w-4 h-4 bg-black "  />
